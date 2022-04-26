@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+    <title>Random DSA Question Generator</title>
+</head>
+<style>
+    table {
+        border-collapse: separate;
+        border-spacing: 0;
+        font-family: 'IBM Plex Sans Hebrew', sans-serif;
+    }
+    
+    caption,
+    th,
+    td {
+        text-align: left;
+        font-weight: normal;
+    }
+    
+    th {
+        background: #3498db;
+        color: white;
+        font-weight: bold;
+    }
+    
+    td,
+    th {
+        padding: 6px;
+        border: 1px solid #ccc;
+        text-align: center;
+        font-size: 17px;
+    }
+</style>
+
+<body>
+    <h3 style="background: crimson;color: white;font-weight: bold;padding:10px;text-align: center;">Questions List!</h3>
+    <table id="cp_logs_table" class="widefat" style="background-color:#333;color:#ddd;font-weight:bold;margin:15px;">
+
+        <thead>
+            <tr>
+                <th scope="col">Serial No.</th>
+                <th scope="col">Data Structure</th>
+                <th scope="col">Question Name</th>
+                <th scope="col">Link</th>
+            </tr>
+        </thead>
+
+
+
+        <tbody id="participants">
+            <tr>
+                <td>1</td>
+                <td title="">Array </td>
+                <td>
+                    Reverse the array
+                </td>
+                <td>
+                    <a target="_blank" href="https://www.geeksforgeeks.org/write-a-program-to-reverse-an-array-or-string/">Solve Here</a>
+                </td>
+
+            </tr>
+            <tr>
+                <td>2</td>
+                <td title="">Array</td>
+                <td>
+                    Find the maximum and minimum element in an array
+                </td>
+                <td>
+                    <a target="_blank" href="https://www.geeksforgeeks.org/maximum-and-minimum-in-an-array/">Solve Here</a>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td title="wolfkin">Array</td>
+                <td>
+                    Find the "Kth" max and min element of an array
+
+                </td>
+                <td>
+                    <a target="_blank" href="https://practice.geeksforgeeks.org/problems/kth-smallest-element/0">Solve Here</a>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+
+    <h3 style="background: crimson;color: white;font-weight: bold;padding:10px;text-align: center;">Random Generations</h3>
+    <table id="cp_winners_table" class="widefat" style="background-color:#333;color:#ddd;font-weight:bold;margin:15px;">
+
+        <thead>
+            <tr>
+                <th scope="col">Serial No.</th>
+                <th scope="col">Data Structure</th>
+                <th scope="col">Question Name</th>
+                <th scope="col">Link</th>
+            </tr>
+        </thead>
+
+
+        <tbody id="winners">
+        </tbody>
+
+    </table>
+
+    <a href="javascript:cplottopickwinner()" style="color: #0088cc;font-weight: bold;text-align: center;margin-left:1rem">Pick Random Question(s)</a>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+</body>
+<script>
+    function cplottopickwinner() {
+        var trs = document.getElementById("participants").getElementsByTagName("tr");
+        var rand = Math.floor(Math.random() * trs.length);
+        trs[rand].style.backgroundColor = "#161b22";
+        document.getElementById('winners').appendChild(trs[rand]);
+    }
+</script>
+
+</html>
